@@ -1,3 +1,5 @@
+
+
 import { useState } from "react";
 import "./App.css";
 
@@ -9,6 +11,7 @@ export default function WeatherApp() {
   async function fetchWeather() {
     if (!city.trim()) return;
     setLoading(true);
+    setWeather(null); 
 
     try {
       const response = await fetch(
@@ -20,9 +23,8 @@ export default function WeatherApp() {
       setWeather(data);
     } catch (error) {
       alert("Failed to fetch weather data");
-      setWeather(null);
     } finally {
-      setLoading(false);
+      setLoading(false); 
     }
   }
 
@@ -36,27 +38,28 @@ export default function WeatherApp() {
           value={city}
           onChange={(e) => setCity(e.target.value)}
         />
-        <button onClick={fetchWeather}>Search</button>
+        <button onClick={fetchWeather} className="search-btn">Search</button>
       </div>
 
-      {loading && <p>Loading data…</p>}
+      {loading && <p className="loading-text">Loading data…</p>} 
 
-      {weather && (
+      {weather && !loading && ( 
         <div className="weather-cards">
+          <h3 className="city-name">{weather.location.name}</h3>
           <div className="weather-card">
-            <h3>Temperature</h3>
+            <h4>Temperature</h4>
             <p>{weather.current.temp_c}°C</p>
           </div>
           <div className="weather-card">
-            <h3>Humidity</h3>
+            <h4>Humidity</h4>
             <p>{weather.current.humidity}%</p>
           </div>
           <div className="weather-card">
-            <h3>Condition</h3>
+            <h4>Condition</h4>
             <p>{weather.current.condition.text}</p>
           </div>
           <div className="weather-card">
-            <h3>Wind Speed</h3>
+            <h4>Wind Speed</h4>
             <p>{weather.current.wind_kph} kph</p>
           </div>
         </div>
