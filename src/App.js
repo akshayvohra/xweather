@@ -24,7 +24,7 @@ const SearchBar = ({ onSearch }) => {
 
 const WeatherCard = ({ title, data }) => {
     return (
-        <div>
+        <div className="weather-card">
             <h2>{title}</h2>
             <p>{data}</p>
         </div>
@@ -57,6 +57,8 @@ const WeatherDisplay = ({ city }) => {
               });
       }
   }, [city]);
+
+  
 
   
 return (

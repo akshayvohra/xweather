@@ -1,41 +1,38 @@
-
+/* General page styling */
 body {
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #1a1a2e;
-  color: white;
   flex-direction: column;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5; /* Light background */
+  margin: 0;
 }
 
 /* Search bar container */
 .search-bar {
   display: flex;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .search-bar input {
   padding: 10px;
   font-size: 16px;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  border: none;
-  outline: none;
-  width: 200px;
+  width: 250px;
 }
 
 .search-bar button {
-  padding: 10px 20px;
+  padding: 10px 15px;
   font-size: 16px;
-  background-color: #28a745;
-  border: none;
+  background-color: #28a745; /* Green button */
   color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
 .search-bar button:hover {
@@ -44,11 +41,12 @@ body {
 
 /* Loading message */
 p {
-  font-size: 18px;
   margin-top: 10px;
+  font-size: 16px;
+  color: #333;
 }
 
-//* Styling for the weather cards container */
+/* Weather cards container */
 .weather-cards {
   display: flex;
   flex-wrap: wrap;
@@ -57,37 +55,27 @@ p {
   margin-top: 20px;
 }
 
-/* Individual weather card styling */
+/* Individual weather card */
 .weather-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: white;
   border-radius: 10px;
-  padding: 15px;
-  width: 150px;
+  padding: 20px;
+  width: 180px;
   text-align: center;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
 }
 
-.weather-card:hover {
-  transform: scale(1.05);
-}
-
-/* Weather card title styling */
+/* Weather card title */
 .weather-card h2 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 8px;
 }
 
-/* Weather card data styling */
+/* Weather card data */
 .weather-card p {
-  font-size: 1rem;
+  font-size: 20px;
   font-weight: bold;
+  color: #222;
 }
-
-
-/* Error message */
-.error-message {
-  color: red;
-  margin-top: 10px;
-}
-
